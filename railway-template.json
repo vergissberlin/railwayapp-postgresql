@@ -1,0 +1,11 @@
+{
+  "$schema": "https://raw.githubusercontent.com/vergissberlin/railway/main/docs/railway-template.schema.json",
+  "schemaVersion": 1,
+  "project": "railwayapp-postgresql",
+  "repo": "vergissberlin/railwayapp-postgresql",
+  "displayName": "PostgreSQL",
+  "publishedCode": "postgresql-vb",
+  "image": "https://raw.githubusercontent.com/vergissberlin/railwayapp-postgresql/main/template-header.svg",
+  "description": "Run PostgreSQL 16 on Railway with Docker, volume-ready defaults.",
+  "workspaceAutomation": false
+}
