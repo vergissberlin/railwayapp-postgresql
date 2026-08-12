@@ -6,6 +6,15 @@ Deploy PostgreSQL 16 on Railway with the official Docker image. This template pr
 
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/postgresql-vb?referralCode=2_sIT9&utm_medium=integration&utm_source=template&utm_campaign=generic)
 
+## 🏗️ Architecture
+
+```mermaid
+flowchart LR
+    Client(["📦 App / Client"]) -->|"PostgreSQL Protocol"| Proxy["Railway TCP Proxy"]
+    Proxy -->|"$PORT → 5432"| App["Container\npostgres:16-alpine"]
+    App --> Volume[("Volume\n/var/lib/postgresql/data")]
+```
+
 ## Environment
 
 | Variable | Required | Description |
