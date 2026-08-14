@@ -27,6 +27,11 @@ flowchart LR
 |----------|-------------|
 | `POSTGRES_USER` | Defaults to `postgres` |
 | `POSTGRES_DB` | Defaults to `postgres` |
+| `POSTGRES_INIT_DUMP_URL` | HTTPS URL to a `.sql` or gzip-compressed `.sql.gz` dump (e.g. `pg_dump --format=plain`); downloaded and imported automatically, but only on the first start of an empty volume. Takes precedence over `POSTGRES_INIT_DUMP_BASE64` if both are set. |
+| `POSTGRES_INIT_DUMP_BASE64` | Same dump, base64-encoded and pasted directly as the variable value. Ignored if `POSTGRES_INIT_DUMP_URL` is also set. Best for small dumps only. |
+
+> [!NOTE]
+> `POSTGRES_INIT_DUMP_URL`/`POSTGRES_INIT_DUMP_BASE64` are only ever consulted on the very first start against a brand-new, empty volume. Once the database has initialized, both variables are silently ignored on every later restart or redeploy — even if you leave them set. The dump runs with full administrative privileges during bootstrap, so only point these at dumps from sources you trust.
 
 ## Persistence
 
