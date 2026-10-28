@@ -4,7 +4,7 @@
 
 Deploy PostgreSQL 16 on Railway with the official Docker image. This template provisions a ready-to-run relational database for your application data, analytics, or as a shared backing store for other services in your project. It includes sensible defaults, a built-in health check, and guidance for attaching persistent storage so your data survives redeploys.
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/postgresql-vb?referralCode=2_sIT9&utm_medium=integration&utm_source=template&utm_campaign=generic)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/postgresql-1?referralCode=2_sIT9&utm_medium=integration&utm_source=template&utm_campaign=generic)
 
 ## 🏗️ Architecture
 
@@ -43,6 +43,10 @@ flowchart LR
 docker build -t railwayapp-postgresql .
 docker run --rm -e POSTGRES_PASSWORD=dev -p 5432:5432 railwayapp-postgresql
 ```
+
+## 💬 Support
+
+Questions or feedback? Visit the [template forum on Railway Central Station](https://station.railway.com/templates/postgre-sql-983bebe8).
 
 <!-- footer -->
 ---
