@@ -1,4 +1,4 @@
-FROM postgres:16-alpine
+FROM postgres:16.15-alpine
 
 # curl is required by docker-entrypoint-wrapper.sh for the optional
 # first-init dump import (POSTGRES_INIT_DUMP_URL). Alpine ships busybox
