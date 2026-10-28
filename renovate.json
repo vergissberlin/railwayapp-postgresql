@@ -2,5 +2,28 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "packageRules": [
+    {
+      "description": "The pg16 build stage only provides binaries for pg_upgrade; keep it on PostgreSQL 16.",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "postgres"
+      ],
+      "matchCurrentValue": "/^16\\./",
+      "allowedVersions": "/^16\\./"
+    },
+    {
+      "description": "Update both postgres stages together so they keep the same Alpine release.",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "postgres"
+      ],
+      "groupName": "postgres docker images"
+    }
   ]
 }
