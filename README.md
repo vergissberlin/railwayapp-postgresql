@@ -44,6 +44,10 @@ docker build -t railwayapp-postgresql .
 docker run --rm -e POSTGRES_PASSWORD=dev -p 5432:5432 railwayapp-postgresql
 ```
 
+## 💬 Support
+
+Questions or feedback? Visit the [template forum on Railway Central Station](https://station.railway.com/templates/postgre-sql-983bebe8).
+
 <!-- footer -->
 ---
 
