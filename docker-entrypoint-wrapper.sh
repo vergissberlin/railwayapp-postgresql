@@ -13,6 +13,15 @@ run_as_postgres() {
   fi
 }
 
+# An interrupted directory switch (container killed during the last step of
+# an automatic upgrade) must never be mistaken for an empty volume.
+if [ -e "$PGDATA/.pg-upgrade-switching" ]; then
+  echo "[Entrypoint] ERROR: a previous automatic upgrade was interrupted while switching directories." >&2
+  echo "[Entrypoint] ERROR: nothing was deleted: original files are in $PGDATA/.pg16-backup (or still in $PGDATA), the upgraded cluster in $PGDATA/.pg18-upgrade." >&2
+  echo "[Entrypoint] ERROR: refusing to start; see README.md, 'Upgrading to PostgreSQL 18'." >&2
+  exit 1
+fi
+
 # Existing volume from an older major version: upgrade in place (PostgreSQL 16
 # only), or keep running the bundled PostgreSQL 16 binaries without touching
 # the data. See README.md, "Upgrading to PostgreSQL 18".
