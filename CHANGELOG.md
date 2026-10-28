@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/vergissberlin/railwayapp-postgresql/compare/v0.2.0...v0.3.0) (2026-10-28)
+
+
+### Features
+
+* upgrade to PostgreSQL 18 with automatic pg_upgrade for existing 16 volumes ([#15](https://github.com/vergissberlin/railwayapp-postgresql/issues/15)) ([2822524](https://github.com/vergissberlin/railwayapp-postgresql/commit/2822524ad988b7f62c769cecd755995d1fb68a25))
+
 ## [0.2.0](https://github.com/vergissberlin/railwayapp-postgresql/compare/v0.1.1...v0.2.0) (2026-10-28)
 
 
