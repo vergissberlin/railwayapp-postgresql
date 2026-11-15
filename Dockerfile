@@ -1,9 +1,9 @@
 # PostgreSQL 16 binaries, kept only so existing PostgreSQL 16 volumes can be
 # upgraded in place with pg_upgrade (see pg-auto-upgrade.sh). Both stages
 # must use the same Alpine release so the shared libraries match.
-FROM postgres:16.15-alpine3.24 AS pg16
+FROM postgres:16.16-alpine3.24 AS pg16
 
-FROM postgres:18.6-alpine3.24
+FROM postgres:18.7-alpine3.24
 
 # curl is required by docker-entrypoint-wrapper.sh for the optional
 # first-init dump import (POSTGRES_INIT_DUMP_URL). Alpine ships busybox
